@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ScreenTwo extends StatelessWidget {
-  const ScreenTwo({super.key});
-  static const String routeName = 'screenTwo';
+class ScreenThree extends StatelessWidget {
+  const ScreenThree({super.key});
+  static const String routeName = 'screenThree';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen Two'),
+        title: Text('Screen Three'),
         actions: [],
       ),
       body: Container(
