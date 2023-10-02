@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class MyExercise extends StatelessWidget {
   String image;
   String text;
@@ -17,11 +18,11 @@ class MyExercise extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(16.0),
       height: 60.0,
       width: 160.0,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(8.0),
         color: backgroundColor,
       ),
       child: Row(
@@ -39,7 +40,7 @@ class MyExercise extends StatelessWidget {
             text,
             style: const TextStyle(
                 color: Colors.black,
-                fontSize: 16.0,
+                fontSize: 14.0,
                 fontWeight: FontWeight.bold),
           ),
         ],
