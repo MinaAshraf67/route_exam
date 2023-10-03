@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:route_exam/shared/constant/image_slider.dart';
 import 'package:route_exam/shared/my_circle_avatar.dart';
 import 'package:route_exam/shared/my_exercise.dart';
 
@@ -12,6 +14,9 @@ class ScreenOne extends StatefulWidget {
 
 class _ScreenOneState extends State<ScreenOne> {
   int index = 0;
+  CarouselController? _controller;
+
+  int _current = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -119,19 +124,27 @@ class _ScreenOneState extends State<ScreenOne> {
                 height: 16.0,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   MyCircleAvatar(
                     image: 'assets/images/circleIcon1.png',
                     circleAvatarLabel: 'Love',
                   ),
+                  const SizedBox(
+                    width: 30.0,
+                  ),
                   MyCircleAvatar(
                     image: 'assets/images/circleIcon2.png',
                     circleAvatarLabel: 'Cool',
                   ),
+                  const SizedBox(
+                    width: 30.0,
+                  ),
                   MyCircleAvatar(
                     image: 'assets/images/circleIcon3.png',
                     circleAvatarLabel: 'Happy',
+                  ),
+                  const SizedBox(
+                    width: 30.0,
                   ),
                   MyCircleAvatar(
                     image: 'assets/images/circleIcon4.png',
@@ -167,18 +180,62 @@ class _ScreenOneState extends State<ScreenOne> {
               const SizedBox(
                 height: 16.0,
               ),
-              Center(
-                child: Image.asset(
-                  'assets/images/moodImage.png',
+              CarouselSlider(
+                carouselController: _controller,
+                options: CarouselOptions(
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(seconds: 4),
+                  autoPlayAnimationDuration: const Duration(seconds: 3),
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      _current = index;
+                    });
+                  },
+                  aspectRatio: 2,
                 ),
+                items: imgList
+                    .map((item) => Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                width: 5.0, color: Colors.transparent),
+                          ),
+                          child: Center(
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: Image.asset(
+                                item,
+                                fit: BoxFit.fill,
+                                width: 1000,
+                                height: 600,
+                              ),
+                            ),
+                          ),
+                        ))
+                    .toList(),
               ),
               const SizedBox(
                 height: 16.0,
               ),
-              Center(
-                child: Image.asset(
-                  'assets/images/indictaor.png',
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: imgList.asMap().entries.map((entry) {
+                  return GestureDetector(
+                    onTap: () => _controller?.animateToPage(entry.key),
+                    child: Container(
+                      width: 6.0,
+                      height: 6.0,
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 4.0),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: (Theme.of(context).brightness ==
+                                      Brightness.dark
+                                  ? Colors.white
+                                  : const Color(0XFF98A2B3))
+                              .withOpacity(_current == entry.key ? 1.0 : 0.4)),
+                    ),
+                  );
+                }).toList(),
               ),
               const SizedBox(
                 height: 40.0,
