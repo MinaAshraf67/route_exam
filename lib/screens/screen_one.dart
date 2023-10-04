@@ -1,8 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:route_exam/shared/constant/image_slider.dart';
-import 'package:route_exam/shared/my_circle_avatar.dart';
-import 'package:route_exam/shared/my_exercise.dart';
+
+import 'package:route_exam/widgets/my_circle_avatar_widget.dart';
+import 'package:route_exam/widgets/my_exercise_widget.dart';
 
 // ignore: use_key_in_widget_constructors
 class ScreenOne extends StatefulWidget {
@@ -112,35 +113,7 @@ class _ScreenOneState extends State<ScreenOne> {
               const SizedBox(
                 height: 16.0,
               ),
-              Row(
-                children: [
-                  MyCircleAvatar(
-                    image: 'assets/images/circleIcon1.png',
-                    circleAvatarLabel: 'Love',
-                  ),
-                  const SizedBox(
-                    width: 30.0,
-                  ),
-                  MyCircleAvatar(
-                    image: 'assets/images/circleIcon2.png',
-                    circleAvatarLabel: 'Cool',
-                  ),
-                  const SizedBox(
-                    width: 30.0,
-                  ),
-                  MyCircleAvatar(
-                    image: 'assets/images/circleIcon3.png',
-                    circleAvatarLabel: 'Happy',
-                  ),
-                  const SizedBox(
-                    width: 30.0,
-                  ),
-                  MyCircleAvatar(
-                    image: 'assets/images/circleIcon4.png',
-                    circleAvatarLabel: 'Sad',
-                  ),
-                ],
-              ),
+              myCircleAvatarWidget(),
               const SizedBox(
                 height: 40.0,
               ),
@@ -252,49 +225,11 @@ class _ScreenOneState extends State<ScreenOne> {
               const SizedBox(
                 height: 16.0,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  MyExercise(
-                    image: 'assets/images/relaxIcon.png',
-                    text: "Relaxation",
-                    backgroundColor: const Color(0xfff9f5ff),
-                    imageColor: const Color(0xffB692F6),
-                  ),
-                  const SizedBox(
-                    width: 24.0,
-                  ),
-                  MyExercise(
-                    image: 'assets/images/meditateIcon.png',
-                    text: "Meditation",
-                    backgroundColor: const Color(0xfffdf2fa),
-                    imageColor: const Color(0xffFAA7E0),
-                  ),
-                ],
-              ),
+              MyExerciseWidget.myFirstExerciseWidget(),
               const SizedBox(
                 height: 16.0,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  MyExercise(
-                    image: 'assets/images/beathingIcon.png',
-                    text: "Beathing",
-                    backgroundColor: const Color(0xfffffaf5),
-                    imageColor: const Color(0xffFEB273),
-                  ),
-                  const SizedBox(
-                    width: 24.0,
-                  ),
-                  MyExercise(
-                    image: 'assets/images/yogaIcon.png',
-                    text: "Yoga",
-                    backgroundColor: const Color(0xfff0f9ff),
-                    imageColor: const Color(0xff7CD4FD),
-                  ),
-                ],
-              ),
+              MyExerciseWidget.mySecondExerciseWidget(),
             ],
           ),
         ),

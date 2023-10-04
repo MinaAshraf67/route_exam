@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
+// ignore: use_key_in_widget_constructors
 class ScreenThree extends StatelessWidget {
-  const ScreenThree({super.key});
   static const String routeName = 'screenThree';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen Three'),
+        title: const Text('Screen Three'),
         actions: [],
       ),
       body: Container(
