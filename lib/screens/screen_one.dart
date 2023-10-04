@@ -15,9 +15,9 @@ class ScreenOne extends StatefulWidget {
 
 class _ScreenOneState extends State<ScreenOne> {
   int index = 0;
-  CarouselController? _controller;
+  CarouselController? controller;
 
-  int _current = 0;
+  int current = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -142,14 +142,14 @@ class _ScreenOneState extends State<ScreenOne> {
                 height: 16.0,
               ),
               CarouselSlider(
-                carouselController: _controller,
+                carouselController: controller,
                 options: CarouselOptions(
                   autoPlay: true,
                   autoPlayInterval: const Duration(seconds: 4),
                   autoPlayAnimationDuration: const Duration(seconds: 3),
                   onPageChanged: (index, reason) {
                     setState(() {
-                      _current = index;
+                      current = index;
                     });
                   },
                   aspectRatio: 2,
@@ -181,7 +181,7 @@ class _ScreenOneState extends State<ScreenOne> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: imgList.asMap().entries.map((entry) {
                   return GestureDetector(
-                    onTap: () => _controller?.animateToPage(entry.key),
+                    onTap: () => controller?.animateToPage(entry.key),
                     child: Container(
                       width: 6.0,
                       height: 6.0,
@@ -193,7 +193,7 @@ class _ScreenOneState extends State<ScreenOne> {
                                       Brightness.dark
                                   ? Colors.white
                                   : const Color(0XFF98A2B3))
-                              .withOpacity(_current == entry.key ? 1.0 : 0.4)),
+                              .withOpacity(current == entry.key ? 1.0 : 0.4)),
                     ),
                   );
                 }).toList(),
