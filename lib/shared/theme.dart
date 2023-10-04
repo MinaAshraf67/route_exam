@@ -11,19 +11,19 @@ class MyThemeData {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: whiteColor,
     textTheme: TextTheme(
-      bodySmall: GoogleFonts.lato(
+      bodySmall: GoogleFonts.inter(
         fontSize: 14.0,
         color: blackColor,
       ),
-      bodyMedium: GoogleFonts.lato(
+      bodyMedium: GoogleFonts.inter(
         fontSize: 16.0,
         color: blackColor,
       ),
-      bodyLarge: GoogleFonts.lato(
+      bodyLarge: GoogleFonts.inter(
         fontSize: 18.0,
         color: blackColor,
       ),
-      titleLarge: GoogleFonts.lato(
+      titleLarge: GoogleFonts.inter(
         fontSize: 24.0,
         color: blackColor,
         fontWeight: FontWeight.bold,
