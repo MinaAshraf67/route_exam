@@ -38,10 +38,10 @@ class MyExercise extends StatelessWidget {
           ),
           Text(
             text,
-            style: const TextStyle(
-                color: Colors.black,
-                fontSize: 14.0,
-                fontWeight: FontWeight.bold),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall
+                ?.copyWith(fontWeight: FontWeight.bold),
           ),
         ],
       ),

@@ -36,10 +36,7 @@ class MyCircleAvatar extends StatelessWidget {
         ),
         Text(
           circleAvatarLabel,
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 14.0,
-          ),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
       ],
     );

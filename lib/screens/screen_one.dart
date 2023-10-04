@@ -54,7 +54,6 @@ class _ScreenOneState extends State<ScreenOne> {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(32.0),
@@ -63,26 +62,23 @@ class _ScreenOneState extends State<ScreenOne> {
             children: [
               Container(
                 margin: const EdgeInsets.only(top: 35.0),
-                child: const Row(
+                child: Row(
                   children: [
-                    Image(
+                    const Image(
                       image: AssetImage('assets/images/logo.png'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10.0,
                     ),
                     Text(
                       'Moody',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24.0,
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 16.0,
                     ),
-                    Spacer(),
-                    Badge(
+                    const Spacer(),
+                    const Badge(
                         child: Image(
                       image: AssetImage('assets/images/notficationIcon.png'),
                     )),
@@ -92,33 +88,26 @@ class _ScreenOneState extends State<ScreenOne> {
               const SizedBox(
                 height: 24.0,
               ),
-              const Row(
+              Row(
                 children: [
                   Text(
                     'Hello, ',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18.0,
-                    ),
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   Text(
                     'Sara Rose',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w600),
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
                 ],
               ),
               const SizedBox(
                 height: 12.0,
               ),
-              const Text(
+              Text(
                 'How are you feeling today ?',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16.0,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(
                 height: 16.0,
@@ -158,20 +147,19 @@ class _ScreenOneState extends State<ScreenOne> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Feature',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       'See more >',
-                      style: TextStyle(
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Colors.green[700],
-                          fontSize: 14.0,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -243,23 +231,20 @@ class _ScreenOneState extends State<ScreenOne> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'Exercise',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   TextButton(
                     onPressed: () {},
                     child: Text(
                       'See more >',
-                      style: TextStyle(
-                        color: Colors.green[700],
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                          color: Colors.green[700],
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
