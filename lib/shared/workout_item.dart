@@ -41,7 +41,9 @@ class WorkoutItem extends StatelessWidget {
                     ChoiceChip(
                       label: Text(
                         choiceChipLabelText,
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
                       ),
                       selected: true,
                       selectedColor: Colors.white,
