@@ -27,8 +27,8 @@ class _ScreenThreeState extends State<ScreenTwo> {
             });
           },
           currentIndex: index,
-          selectedItemColor: Color(0xFF363F72),
-          unselectedItemColor: Color(0xFF667085),
+          selectedItemColor: const Color(0xFF363F72),
+          unselectedItemColor: const Color(0xFF667085),
           iconSize: 30.0,
           items: const [
             BottomNavigationBarItem(
@@ -207,6 +207,26 @@ class _ScreenThreeState extends State<ScreenTwo> {
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 24.0,
+                ),
+                WorkoutItem(
+                  choiceChipLabelText: '7 days',
+                  workoutName: 'Morning Yoga',
+                  workoutDescription: 'Improve mental focus.',
+                  workoutImage: 'assets/images/workoutImage1.png',
+                  time: '30 mins',
+                ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                WorkoutItem(
+                  choiceChipLabelText: '3 days',
+                  workoutName: 'Plank Exercise',
+                  workoutDescription: 'Improve posture and stability.',
+                  workoutImage: 'assets/images/workoutImage2.png',
+                  time: '30 mins',
                 ),
                 const SizedBox(
                   height: 24.0,

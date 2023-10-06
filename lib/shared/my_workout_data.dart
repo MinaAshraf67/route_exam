@@ -23,7 +23,7 @@ class MyWorkoutData extends StatelessWidget {
             Row(
               children: [
                 ImageIcon(
-                  color: Color(0xff717BBC),
+                  color: const Color(0xff717BBC),
                   AssetImage('assets/images/$workoutImage'),
                 ),
                 Text(
@@ -32,7 +32,7 @@ class MyWorkoutData extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 4.0,
             ),
             Row(
