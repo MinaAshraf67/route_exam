@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: MyThemeData.lightTheme,
       themeMode: ThemeMode.light,
-      initialRoute: ScreenThree.routeName,
+      initialRoute: ScreenOne.routeName,
       routes: {
         ScreenOne.routeName: (context) => ScreenOne(),
         ScreenTwo.routeName: (context) => ScreenTwo(),

@@ -7,8 +7,6 @@ import 'package:route_exam/shared/workout_item.dart';
 class ScreenTwo extends StatefulWidget {
   static const String routeName = 'screenTwo';
 
-  const ScreenTwo({super.key});
-
   @override
   State<ScreenTwo> createState() => _ScreenThreeState();
 }

@@ -8,8 +8,6 @@ import 'package:route_exam/shared/my_exercise.dart';
 class ScreenOne extends StatefulWidget {
   static const String routeName = 'screenOne';
 
-  const ScreenOne({super.key});
-
   @override
   State<ScreenOne> createState() => _ScreenOneState();
 }
