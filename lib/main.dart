@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:route_exam/screens/screen_one.dart';
 import 'package:route_exam/screens/screen_three.dart';
 import 'package:route_exam/screens/screen_two.dart';
 import 'package:route_exam/shared/theme.dart';
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: MyThemeData.lightTheme,
       themeMode: ThemeMode.light,
-      initialRoute: ScreenTwo.routeName,
+      initialRoute: ScreenThree.routeName,
       routes: {
-        // ScreenOne.routeName: (context) => ScreenOne(),
+        ScreenOne.routeName: (context) => ScreenOne(),
         ScreenTwo.routeName: (context) => ScreenTwo(),
         ScreenThree.routeName: (context) => ScreenThree(),
       },

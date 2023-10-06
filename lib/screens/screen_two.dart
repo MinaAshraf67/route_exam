@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:route_exam/screens/screen_three.dart';
 import 'package:route_exam/shared/my_workout_data.dart';
 import 'package:route_exam/shared/workout_item.dart';
 
@@ -13,8 +14,6 @@ class ScreenTwo extends StatefulWidget {
 }
 
 class _ScreenThreeState extends State<ScreenTwo> {
-  int index = 0;
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,10 +22,9 @@ class _ScreenThreeState extends State<ScreenTwo> {
         bottomNavigationBar: BottomNavigationBar(
           onTap: (value) {
             setState(() {
-              index = value;
+              Navigator.pushNamed(context, ScreenThree.routeName);
             });
           },
-          currentIndex: index,
           selectedItemColor: const Color(0xFF363F72),
           unselectedItemColor: const Color(0xFF667085),
           iconSize: 30.0,

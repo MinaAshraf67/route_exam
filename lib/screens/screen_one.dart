@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:route_exam/screens/screen_two.dart';
 import 'package:route_exam/shared/constant/image_slider.dart';
 import 'package:route_exam/shared/my_circle_avatar.dart';
 import 'package:route_exam/shared/my_exercise.dart';
@@ -14,7 +15,6 @@ class ScreenOne extends StatefulWidget {
 }
 
 class _ScreenOneState extends State<ScreenOne> {
-  int index = 0;
   CarouselController? controller;
 
   int current = 0;
@@ -25,12 +25,12 @@ class _ScreenOneState extends State<ScreenOne> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
           setState(() {
-            index = value;
+            Navigator.pushNamed(context, ScreenTwo.routeName);
           });
         },
-        currentIndex: index,
         selectedItemColor: Colors.green[800],
         unselectedItemColor: Colors.blueGrey[400],
+        showUnselectedLabels: false,
         iconSize: 30.0,
         items: const [
           BottomNavigationBarItem(
@@ -56,9 +56,9 @@ class _ScreenOneState extends State<ScreenOne> {
         ],
       ),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(32.0),
+      body: Padding(
+        padding: const EdgeInsets.all(32.0),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
